@@ -95,14 +95,14 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $invoice->invoice_number }} </td>
                                         <td>{{ $invoice->invoice_Date }}</td>
-                                        <td>{{ $invoice->Due_date }}</td>
+                                        <td>{{ $invoice->due_date }}</td>
                                         <td>{{ $invoice->product }}</td>
                                         <td><a
                                                 href="{{ url('InvoicesDetails') }}/{{ $invoice->id }}">{{ $invoice->section->section_name }}</a>
                                         </td>
-                                        <td>{{ $invoice->Discount }}</td>
-                                        <td>{{ $invoice->Rate_VAT }}</td>
-                                        <td>{{ $invoice->Value_VAT }}</td>
+                                        <td>{{ $invoice->discount }}</td>
+                                        <td>{{ $invoice->rate_vat }}</td>
+                                        <td>{{ $invoice->value_vat }}</td>
                                         <td>{{ $invoice->Total }}</td>
                                         <td>
                                             @if ($invoice->value_status == 1)

@@ -213,7 +213,7 @@ class InvoicesController extends Controller
         return view('invoices.invoices_unpaid',compact('invoices'));
     }
 
-    public function invoicePartial()
+    public function invoicesPartial()
     {
         $invoices = Invoices::where('value_status',3)->get();
         return view('invoices.invoices_Partial',compact('invoices'));

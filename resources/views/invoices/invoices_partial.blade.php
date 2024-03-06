@@ -97,19 +97,19 @@
                                         <td>{{ $i }}</td>
                                         <td>{{ $invoice->invoice_number }} </td>
                                         <td>{{ $invoice->invoice_Date }}</td>
-                                        <td>{{ $invoice->Due_date }}</td>
+                                        <td>{{ $invoice->due_date }}</td>
                                         <td>{{ $invoice->product }}</td>
                                         <td><a
                                                 href="{{ url('InvoicesDetails') }}/{{ $invoice->id }}">{{ $invoice->section->section_name }}</a>
                                         </td>
-                                        <td>{{ $invoice->Discount }}</td>
-                                        <td>{{ $invoice->Rate_VAT }}</td>
-                                        <td>{{ $invoice->Value_VAT }}</td>
+                                        <td>{{ $invoice->discount }}</td>
+                                        <td>{{ $invoice->rate_vat }}</td>
+                                        <td>{{ $invoice->value_vat }}</td>
                                         <td>{{ $invoice->Total }}</td>
                                         <td>
-                                            @if ($invoice->Value_Status == 1)
+                                            @if ($invoice->value_status == 1)
                                                 <span class="text-success">{{ $invoice->Status }}</span>
-                                            @elseif($invoice->Value_Status == 2)
+                                            @elseif($invoice->value_status == 2)
                                                 <span class="text-danger">{{ $invoice->Status }}</span>
                                             @else
                                                 <span class="text-warning">{{ $invoice->Status }}</span>
@@ -134,7 +134,7 @@
                                                         الفاتورة</a>
 
                                                     <a class="dropdown-item"
-                                                        href="{{ URL::route('Status_show', [$invoice->id]) }}"><i
+                                                        href="{{ URL::route('status_show', [$invoice->id]) }}"><i
                                                             class=" text-success fas
                                                                                                                                     fa-money-bill"></i>&nbsp;&nbsp;تغير
                                                         حالة

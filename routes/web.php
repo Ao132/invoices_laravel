@@ -42,7 +42,7 @@ Route::get('/status_show/{id}', [InvoicesController::class, 'show'])->name('stat
 Route::post('/status_update/{id}', [InvoicesController::class, 'status_update'])->name('status_update');
 Route::get('/invoices_paid', [InvoicesController::class, 'invoicesPaid']);
 Route::get('/invoices_unpaid', [InvoicesController::class, 'invoicesunPaid']);
-Route::get('/invoices_Partial', [InvoicesController::class, 'invoicesPartial']);
+Route::get('/invoices_partial', [InvoicesController::class, 'invoicesPartial']);
 
 
 

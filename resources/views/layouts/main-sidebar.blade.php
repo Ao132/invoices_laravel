@@ -53,7 +53,7 @@
                     <li><a class="slide-item" href="{{ url('/' . ($page = 'invoices_unpaid')) }}">الفواتير الغير
                             مدفوعه</a>
                     </li>
-                    <li><a class="slide-item" href="{{ url('/' . ($page = 'chart-sparkline')) }}">الفواتير المدفوعه
+                    <li><a class="slide-item" href="{{ url('/' . ($page = 'invoices_partial')) }}">الفواتير المدفوعه
                             جزئيا</a></li>
                 </ul>
             </li>
