@@ -138,8 +138,9 @@
                             <div class="col">
                                 <label for="exampleTextarea">حالة الدفع</label>
                                 <select class="form-control" id="Status" name="Status" required>
-                                    {{ $invoices->Status }}
+                                    {{-- {{ $invoices->Status }} --}}
                                     {{-- <option>{{$invoices->Status}}</option> --}}
+                                    <option  selected="true" disabled="disabled" value="{{$invoices->Status}}">-- {{$invoices->Status }} --</option>
                                     <option value="مدفوعة">مدفوعة</option>
                                     <option value="مدفوعة جزئيا">مدفوعة جزئيا</option>
                                 </select>

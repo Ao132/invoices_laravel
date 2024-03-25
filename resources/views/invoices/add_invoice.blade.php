@@ -112,7 +112,7 @@
 
                             <div class="col">
                                 <label for="inputName" class="control-label">الخصم</label>
-                                <input type="text" class="form-control form-control-lg" id="Discount" name="discount"
+                                <input type="text" class="form-control form-control-lg" id="discount" name="discount"
                                     title="يرجي ادخال مبلغ الخصم "
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                     value=0 required>
@@ -120,7 +120,7 @@
 
                             <div class="col">
                                 <label for="inputName" class="control-label">نسبة ضريبة القيمة المضافة</label>
-                                <select name="rate_vat" id="Rate_VAT" class="form-control" onchange="myFunction()">
+                                <select name="rate_vat" id="rate_vat" class="form-control" onchange="myFunction()">
                                     <!--placeholder-->
                                     <option value="" selected disabled>حدد نسبة الضريبة</option>
                                     <option value=" 5%">5%</option>
@@ -135,7 +135,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="inputName" class="control-label">قيمة ضريبة القيمة المضافة</label>
-                                <input type="text" class="form-control" id="Value_VAT" name="value_vat" readonly>
+                                <input type="text" class="form-control" id="value_vat" name="value_vat" readonly>
                             </div>
 
                             <div class="col">
@@ -156,8 +156,8 @@
                         <h5 class="card-title">المرفقات</h5>
 
                         <div class="col-sm-12 col-md-12">
-                            <input type="file" name="pic" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
-                                data-height="70" />
+                            <input type="file" name="pic" class="dropify"
+                                accept=".pdf,.jpg, .png, image/jpeg, image/png" data-height="70" />
                         </div><br>
 
                         <div class="d-flex justify-content-center">
@@ -209,7 +209,6 @@
         var date = $('.fc-datepicker').datepicker({
             dateFormat: 'yy-mm-dd'
         }).val();
-
     </script>
 
     <script>
@@ -224,7 +223,8 @@
                         success: function(data) {
                             $('select[name="product"]').empty();
                             $.each(data, function(key, value) {
-                                $('select[name="product"]').append('<option value="' + value + '">' + value + '</option>');
+                                $('select[name="product"]').append('<option value="' +
+                                    value + '">' + value + '</option>');
                             });
                         },
                     });
@@ -235,42 +235,40 @@
             });
 
         });
-
     </script>
 
 
     <script>
         function myFunction() {
 
-            var Amount_Commission = parseFloat(document.getElementById("amount_comission").value);
-            var Discount = parseFloat(document.getElementById("Discount").value);
-            var Rate_VAT = parseFloat(document.getElementById("Rate_VAT").value);
-            var Value_VAT = parseFloat(document.getElementById("Value_VAT").value);
+            var amount_comission = parseFloat(document.getElementById("amount_comission").value);
+            var discount = parseFloat(document.getElementById("discount").value);
+            var rate_vat = parseFloat(document.getElementById("rate_vat").value);
+            var value_vat = parseFloat(document.getElementById("value_vat").value);
 
-            var Amount_Commission2 = Amount_Commission - Discount;
+            var amount_comission2 = amount_comission - discount;
 
 
-            if (typeof Amount_Commission === 'undefined' || !Amount_Commission) {
+            if (typeof amount_comission === 'undefined' || !amount_comission) {
 
                 alert('يرجي ادخال مبلغ العمولة ');
 
             } else {
-                var intResults = Amount_Commission2 * Rate_VAT / 100;
+                var intResults = amount_comission2 * rate_vat / 100;
 
-                var intResults2 = parseFloat(intResults + Amount_Commission2);
+                var intResults2 = parseFloat(intResults + amount_comission2);
 
                 sumq = parseFloat(intResults).toFixed(2);
 
                 sumt = parseFloat(intResults2).toFixed(2);
 
-                document.getElementById("Value_VAT").value = sumq;
+                document.getElementById("value_vat").value = sumq;
 
                 document.getElementById("Total").value = sumt;
 
             }
 
         }
-
     </script>
 
 
